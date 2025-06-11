@@ -38,15 +38,21 @@ def _simple_match(regex, data):
 def _replacement_match(regex, data):
     group_parts_of_regex = r'^\/(.*[^\\])\/([^\/]+)\/$'
     ar = re.search(group_parts_of_regex, regex)
-    search_for_regex = "(" + ar.group(1) + ")"
-    match = re.search(search_for_regex, data)
-    ver = None
-    if (match):
-        ver = re.sub(ar.group(1), ar.group(2), match.group(0))
-        return ver
+    if not ar:
+        return None
+    pattern_str = ar.group(1)
+    replacement_str = ar.group(2)
 
-    return None
+    match = re.search(pattern_str, data)
+    if not match:
+        return None
 
+    def repl(m):
+        group_num = int(m.group(1))
+        return f'\\{group_num}'
+
+    replacement_str = re.sub(r'\$(\d+)', repl, replacement_str)
+    return re.sub(pattern_str, replacement_str, match.group(0))
 
 def _scanhash(hash, definitions=definitions):
     for component in definitions:
