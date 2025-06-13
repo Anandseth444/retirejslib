@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 RETIREJS_URL = "https://raw.githubusercontent.com/RetireJS/retire.js/master/repository/jsrepository.json"
 VERSION_PLACEHOLDER_REGEX = r"§§version§§"
 VERSION_REPLACEMENT_REGEX = r"[0-9][0-9.a-z_-]+"
-DEFAULT_VULNERABILITIES_FILEPATH = "retirejs/vulnerabilities.py"
+DEFAULT_VULNERABILITIES_FILEPATH = "src/unretiredjs/vulnerabilities.py"
 
 # Define expected fields to check for potential breaking changes or missing critical data
 CRITICAL_COMPONENT_FIELDS = {"vulnerabilities", "extractors"}
