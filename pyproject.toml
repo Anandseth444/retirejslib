@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unretiredjs"
-version = "1.4.2"
+version = "1.4.3"
 description = "Python port of RetireJS - A tool to scan for vulnerabilities in JavaScript libraries"
 authors = [
     {name = "Anand Kumar", email = "anandseth444@gmail.com"}
@@ -25,6 +25,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/Anandseth444/retirejslib"
+Changelog = "https://github.com/Anandseth444/retirejslib/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 packages = ["retirejs"]

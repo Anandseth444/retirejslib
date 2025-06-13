@@ -86,6 +86,26 @@ results = unretiredjs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 - Python 3.6 or higher
 - requests>=2.25.0
 
+## Vulnerability Data Updates
+
+The vulnerability data used by UnretiredJS is stored in `retirejs/vulnerabilities.py`. This data is sourced from the official RetireJS repository (`https://raw.githubusercontent.com/RetireJS/retire.js/master/repository/jsrepository.json`).
+
+Updates are handled automatically by a GitHub Action defined in `.github/workflows/update_retirejs_data.yml`. This action runs on a monthly schedule (at 00:00 UTC on the 1st day of every month) to fetch the latest vulnerability information. It also allows for manual triggering via the GitHub Actions UI.
+
+If you need to run the update script manually, follow these steps:
+
+1.  Navigate to the root directory of this repository.
+2.  Ensure you have Python 3 installed.
+3.  Install the necessary dependencies:
+    ```bash
+    pip install requests
+    ```
+4.  Run the update script:
+    ```bash
+    python retirejs/update_vulnerabilities.py
+    ```
+5.  If the script makes any changes to `retirejs/vulnerabilities.py`, these changes should be committed to the repository.
+
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
