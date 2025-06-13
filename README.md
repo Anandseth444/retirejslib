@@ -23,9 +23,17 @@ pip install unretiredjs
 ### Basic Usage
 
 ```python
+# Method 1: Import specific function
+from unretiredjs import scan_endpoint
+
+# Method 2: Import the entire module
 import unretiredjs
 
 # Scan a remote JavaScript file
+# Using specific import
+results = scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
+
+# Or using full module import
 results = unretiredjs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 ```
 
@@ -45,27 +53,6 @@ results = unretiredjs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
                     'CVE': ['CVE-2011-4969']
                 },
                 'severity': 'medium'
-            },
-            {
-                'info': [
-                    'http://bugs.jquery.com/ticket/11290',
-                    'http://research.insecurelabs.org/jquery/test/'
-                ],
-                'identifiers': {
-                    'bug': '11290',
-                    'summary': 'Selector interpreted as HTML'
-                },
-                'severity': 'medium'
-            },
-            {
-                'info': [
-                    'https://github.com/jquery/jquery/issues/2432',
-                    'http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/'
-                ],
-                'identifiers': {
-                    'summary': '3rd party CORS request may execute'
-                },
-                'severity': 'medium'
             }
         ],
         'version': '1.6.0',
@@ -80,31 +67,48 @@ results = unretiredjs.scan_endpoint("http://code.jquery.com/jquery-1.6.min.js")
 - Detect vulnerable versions of popular JavaScript libraries
 - Comprehensive vulnerability database
 - Easy to integrate into Python projects
+- Modern Python package structure with src layout
 
 ## Requirements
 
 - Python 3.6 or higher
 - requests>=2.25.0
 
-## Vulnerability Data Updates
+## Development
 
-The vulnerability data used by UnretiredJS is stored in `retirejs/vulnerabilities.py`. This data is sourced from the official RetireJS repository (`https://raw.githubusercontent.com/RetireJS/retire.js/master/repository/jsrepository.json`).
+### Project Structure
+
+```
+unretiredjs/
+├── src/
+│   └── unretiredjs/
+│       ├── __init__.py
+│       ├── retirejs.py
+│       ├── vulnerabilities.py
+│       └── update_vulnerabilities.py
+├── tests/
+│   ├── test_retirejs.py
+│   ├── test_update_vulnerabilities.py
+│   └── compare_results.py
+├── pyproject.toml
+└── README.md
+```
+
+### Vulnerability Data Updates
+
+The vulnerability data used by UnretiredJS is stored in `src/unretiredjs/vulnerabilities.py`. This data is sourced from the official RetireJS repository (`https://raw.githubusercontent.com/RetireJS/retire.js/master/repository/jsrepository.json`).
 
 Updates are handled automatically by a GitHub Action defined in `.github/workflows/update_retirejs_data.yml`. This action runs on a monthly schedule (at 00:00 UTC on the 1st day of every month) to fetch the latest vulnerability information. It also allows for manual triggering via the GitHub Actions UI.
 
-If you need to run the update script manually, follow these steps:
+To run the update script manually:
 
-1.  Navigate to the root directory of this repository.
-2.  Ensure you have Python 3 installed.
-3.  Install the necessary dependencies:
-    ```bash
-    pip install requests
-    ```
-4.  Run the update script:
-    ```bash
-    python retirejs/update_vulnerabilities.py
-    ```
-5.  If the script makes any changes to `retirejs/vulnerabilities.py`, these changes should be committed to the repository.
+```bash
+# Install development dependencies
+pip install -e ".[dev]"
+
+# Run the update script
+python -m unretiredjs.update_vulnerabilities
+```
 
 ## License
 
