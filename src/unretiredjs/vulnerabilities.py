@@ -4901,7 +4901,7 @@ definitions = {
                 "DataTable && DataTable.version"
             ],
             "uri": [
-                "/([0-9][0-9.a-z_-]+)/(js/)?jquery.dataTables(.min)?.js"
+                "/([0-9][0-9.a-z_-]+)/(js/)?(jquery.)?dataTables(.min)?.js"
             ]
         },
         "npmname": "datatables.net",
@@ -5180,7 +5180,8 @@ definitions = {
     "knockout": {
         "extractors": {
             "filecontent": [
-                "(?:\\*|//) Knockout JavaScript library v([0-9][0-9.a-z_-]+)"
+                "(?:\\*|//) Knockout JavaScript library v([0-9][0-9.a-z_-]+)",
+                ".version=\"([0-9][0-9.a-z_-]+)\",_.b\\(.version.,_.version\\),_.options=\\{deferUpdates:!1,useOnlyNativeEvents:!1,foreachHidesDestroyed:!1\\}"
             ],
             "filename": [
                 "knockout-([0-9][0-9.a-z_-]+)(.min)?\\.js"
@@ -7081,9 +7082,11 @@ definitions = {
         "extractors": {
             "filecontent": [
                 "/\\*\\* @license React v([0-9][0-9.a-z_-]+)[\\s]*\\* react-dom\\.",
+                "return ReactSharedInternals.[a-zA-Z].useHostTransitionStatus\\(\\)\\},exports.version=\"([0-9][0-9.a-z_-]+)\"",
                 "version:\"([0-9][0-9.a-z_-]+)[a-z0-9\\-]*\"[\\s,]*rendererPackageName:\"react-dom\""
             ],
             "uri": [
+                "/react-dom/([0-9][0-9.a-z_-]+)/",
                 "/react-dom@([0-9][0-9.a-z_-]+)/"
             ]
         },
@@ -8192,7 +8195,8 @@ definitions = {
                 "$.ua.version"
             ],
             "uri": [
-                "/([0-9][0-9.a-z_-]+)/ua-parser(.min)?.js"
+                "/([0-9][0-9.a-z_-]+)/ua-parser(.min)?.js",
+                "/ua-parser-js@([0-9][0-9.a-z_-]+)/"
             ]
         },
         "vulnerabilities": [

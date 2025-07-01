@@ -1,3 +1,8 @@
+## [1.4.6] - 2025-07-01
+
+### Added
+- Updated RetireJS vulnerability database
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
