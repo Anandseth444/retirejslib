@@ -1303,7 +1303,7 @@ definitions = {
                 "severity": "medium"
             },
             {
-                "below": "0.21.3",
+                "below": "0.21.2",
                 "cwe": [
                     "CWE-1333",
                     "CWE-400"
@@ -5222,7 +5222,7 @@ definitions = {
                 "/\\*[\\s*!]+(?:@license)?[\\s*]+(?:Lo-Dash|lodash|Lodash) v?([0-9][0-9.a-z_-]+) lodash.com/license",
                 "/\\*[\\s*!]+(?:@license)?[\\s*]+(?:Lo-Dash|lodash|Lodash) v?([0-9][0-9.a-z_-]+)[\\s\\S]{1,200}Build: `lodash modern -o",
                 "/\\*[\\s*]+@license[\\s*]+(?:Lo-Dash|lodhash|Lodash)[\\s\\S]{1,500}var VERSION *= *['\"]([0-9][0-9.a-z_-]+)['\"]",
-                "=\"([0-9][0-9.a-z_-]+)\"[\\s\\S]{1,300}__lodash_hash_undefined__",
+                "=\"([0-9][0-9.a-z_-]+)(?<=[0-9]{1,2}\\.[0-9]{1,2}\\.[0-9]{1,2})\"[\\s\\S]{1,300}__lodash_hash_undefined__",
                 "var VERSION=\"([0-9][0-9.a-z_-]+)\";var BIND_FLAG=1,BIND_KEY_FLAG=2,CURRY_BOUND_FLAG=4,CURRY_FLAG=8"
             ],
             "uri": [
@@ -6429,6 +6429,28 @@ definitions = {
                 "severity": "low"
             },
             {
+                "atOrAbove": "13.0",
+                "below": "14.2.30",
+                "cwe": [
+                    "CWE-1385"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-48068"
+                    ],
+                    "githubID": "GHSA-3h52-269p-cp9r",
+                    "summary": "Information exposure in Next.js dev server due to lack of origin verification"
+                },
+                "info": [
+                    "https://github.com/advisories/GHSA-3h52-269p-cp9r",
+                    "https://github.com/vercel/next.js",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-3h52-269p-cp9r",
+                    "https://nvd.nist.gov/vuln/detail/CVE-2025-48068",
+                    "https://vercel.com/changelog/cve-2025-48068"
+                ],
+                "severity": "low"
+            },
+            {
                 "atOrAbove": "15.0.0",
                 "below": "15.1.2",
                 "cwe": [
@@ -6472,7 +6494,29 @@ definitions = {
                 "severity": "low"
             },
             {
-                "atOrAbove": "13.0",
+                "atOrAbove": "15.0.4-canary.51",
+                "below": "15.1.8",
+                "cwe": [
+                    "CWE-444"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-49826"
+                    ],
+                    "githubID": "GHSA-67rr-84xm-4c7r",
+                    "summary": "### Summary\nA vulnerability affecting Next.js has been addressed. It impacted versions 15.0.4 through 15.1.8 and involved a cache poisoning bug leading to a Denial of Service (DoS) condition.\n\nUnder certain conditions, this issue may allow a HTTP 204 response to be cached for static pages, leading to the 204 response being served to all users attempting to access the page\n\nMore details: [CVE-2025-49826](https://vercel.com/changelog/cve-2025-49826)\n\n## Credits\n- Allam Rachid [zhero;](https://zhero-web-sec.github.io/research-and-things/)\n- Allam Yasser (inzo)"
+                },
+                "info": [
+                    "https://github.com/vercel/next.js/commit/16bfce64ef2157f2c1dfedcfdb7771bc63103fd2",
+                    "https://github.com/vercel/next.js/commit/a15b974ed707d63ad4da5b74c1441f5b7b120e93",
+                    "https://github.com/vercel/next.js/releases/tag/v15.1.8",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-67rr-84xm-4c7r",
+                    "https://vercel.com/changelog/cve-2025-49826"
+                ],
+                "severity": "high"
+            },
+            {
+                "atOrAbove": "15.0.0",
                 "below": "15.2.2",
                 "cwe": [
                     "CWE-1385"
@@ -6541,6 +6585,29 @@ definitions = {
                     "https://github.com/vercel/next.js/security/advisories/GHSA-223j-4rm8-mrmf",
                     "https://nvd.nist.gov/vuln/detail/CVE-2025-30218",
                     "https://vercel.com/changelog/cve-2025-30218-5DREmEH765PoeAsrNNQj3O"
+                ],
+                "severity": "low"
+            },
+            {
+                "atOrAbove": "15.3.0",
+                "below": "15.3.3",
+                "cwe": [
+                    "CWE-444"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-49005"
+                    ],
+                    "githubID": "GHSA-r2fc-ccr8-96c4",
+                    "summary": "### Summary\n\nA cache poisoning issue in **Next.js App Router >=15.3.0 and < 15.3.3** may have allowed RSC payloads to be cached and served in place of HTML, under specific conditions involving middleware and redirects. This issue has been fixed in **Next.js 15.3.3**.\n\nUsers on affected versions should **upgrade immediately** and **redeploy** to ensure proper caching behavior.\n\nMore details: [CVE-2025-49005](https://vercel.com/changelog/cve-2025-49005)"
+                },
+                "info": [
+                    "https://github.com/vercel/next.js/commit/ec202eccf05820b60c6126d6411fe16766ecc066",
+                    "https://github.com/vercel/next.js/issues/79346",
+                    "https://github.com/vercel/next.js/pull/79939",
+                    "https://github.com/vercel/next.js/releases/tag/v15.3.3",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-r2fc-ccr8-96c4",
+                    "https://vercel.com/changelog/cve-2025-49005"
                 ],
                 "severity": "low"
             }
