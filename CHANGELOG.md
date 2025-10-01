@@ -1,3 +1,8 @@
+## [1.4.8] - 2025-10-01
+
+### Added
+- Updated RetireJS vulnerability database
+
 ## [1.4.7] - 2025-08-01
 
 ### Added

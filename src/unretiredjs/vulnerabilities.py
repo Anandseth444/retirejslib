@@ -862,7 +862,7 @@ definitions = {
         ],
         "extractors": {
             "filecontent": [
-                "/\\*[\\*\\s]+(?:@license )?AngularJS v([0-9][0-9.a-z_-]+)",
+                "/\\*[\\*\\s]+(?:@license )?AngularJS(?: NES)? v([0-9][0-9.a-z_-]+)",
                 "http://errors\\.angularjs\\.org/([0-9][0-9.a-z_-]+)/"
             ],
             "filename": [
@@ -1212,6 +1212,50 @@ definitions = {
                 "severity": "low"
             },
             {
+                "atOrAbove": "0",
+                "below": "1.9.8",
+                "cwe": [
+                    "CWE-791"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-2336"
+                    ],
+                    "githubID": "GHSA-4p4w-6hg8-63wx",
+                    "summary": "AngularJS Incomplete Filtering of Special Elements vulnerability"
+                },
+                "info": [
+                    "https://codepen.io/herodevs/pen/bNGYaXx/412a3a4218387479898912f60c269c6c",
+                    "https://github.com/advisories/GHSA-4p4w-6hg8-63wx",
+                    "https://github.com/angular/angular.js",
+                    "https://nvd.nist.gov/vuln/detail/CVE-2025-2336",
+                    "https://www.herodevs.com/vulnerability-directory/cve-2025-2336"
+                ],
+                "severity": "medium"
+            },
+            {
+                "atOrAbove": "0",
+                "below": "1.9.9",
+                "cwe": [
+                    "CWE-1333"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-4690"
+                    ],
+                    "githubID": "GHSA-hfff-63hg-f47j",
+                    "summary": "AngularJS Regular expression Denial of Service (ReDoS)"
+                },
+                "info": [
+                    "https://codepen.io/herodevs/pen/RNNEPzP/751b91eab7730dff277523f3d50e4b77",
+                    "https://github.com/advisories/GHSA-hfff-63hg-f47j",
+                    "https://github.com/angular/angular.js",
+                    "https://nvd.nist.gov/vuln/detail/CVE-2025-4690",
+                    "https://www.herodevs.com/vulnerability-directory/cve-2025-4690"
+                ],
+                "severity": "medium"
+            },
+            {
                 "below": "1.999",
                 "cwe": [
                     "CWE-1104"
@@ -1457,6 +1501,27 @@ definitions = {
                     "https://github.com/axios/axios/releases/tag/v1.8.2",
                     "https://github.com/axios/axios/security/advisories/GHSA-jr5f-v2jv-69x6",
                     "https://nvd.nist.gov/vuln/detail/CVE-2025-27152"
+                ],
+                "severity": "high"
+            },
+            {
+                "atOrAbove": "0",
+                "below": "1.12.0",
+                "cwe": [
+                    "CWE-770"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-58754"
+                    ],
+                    "githubID": "GHSA-4hjh-wcwx-xvwj",
+                    "summary": "## Summary\n\nWhen Axios runs on Node.js and is given a URL with the `data:` scheme, it does not perform HTTP. Instead, its Node http adapter decodes the entire payload into memory (`Buffer`/`Blob`) and returns a synthetic 200 response.\nThis path ignores `maxContentLength` / `maxBodyLength` (which only protect HTTP responses), so an attacker can supply a very large `data:` URI and cause the process to allocate unbounded memory and crash (DoS), even if the caller requested `responseType: 'stream'`."
+                },
+                "info": [
+                    "https://github.com/axios/axios/commit/945435fc51467303768202250debb8d4ae892593",
+                    "https://github.com/axios/axios/pull/7011",
+                    "https://github.com/axios/axios/releases/tag/v1.12.0",
+                    "https://github.com/axios/axios/security/advisories/GHSA-4hjh-wcwx-xvwj"
                 ],
                 "severity": "high"
             }
@@ -1709,25 +1774,21 @@ definitions = {
                 "severity": "medium"
             },
             {
-                "atOrAbove": "2.0.0",
+                "atOrAbove": "3.4.1",
                 "below": "3.4.2",
                 "cwe": [
                     "CWE-79"
                 ],
                 "identifiers": {
                     "CVE": [
-                        "CVE-2024-6484"
+                        "CVE-2025-1647"
                     ],
-                    "githubID": "GHSA-9mvj-f7w8-pvh2",
-                    "summary": "Bootstrap Cross-Site Scripting (XSS) vulnerability"
+                    "githubID": "GHSA-q58r-hwc8-rm9j",
+                    "summary": "Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Bootstrap allows Cross-Site Scripting (XSS). This issue affects Bootstrap version 3.4.1. At time of publication, there is no publicly available patched version."
                 },
                 "info": [
-                    "https://github.com/advisories/GHSA-9mvj-f7w8-pvh2",
-                    "https://github.com/rubysec/ruby-advisory-db/blob/master/gems/bootstrap-sass/CVE-2024-6484.yml",
-                    "https://github.com/rubysec/ruby-advisory-db/blob/master/gems/bootstrap/CVE-2024-6484.yml",
-                    "https://github.com/twbs/bootstrap",
-                    "https://nvd.nist.gov/vuln/detail/CVE-2024-6484",
-                    "https://www.herodevs.com/vulnerability-directory/cve-2024-6484"
+                    "https://lists.debian.org/debian-lts-announce/2025/06/msg00001.html",
+                    "https://www.herodevs.com/vulnerability-directory/cve-2025-1647"
                 ],
                 "severity": "medium"
             },
@@ -2338,6 +2399,25 @@ definitions = {
                     "https://nvd.nist.gov/vuln/detail/CVE-2024-45613"
                 ],
                 "severity": "medium"
+            },
+            {
+                "atOrAbove": "46.0.0",
+                "below": "46.0.3",
+                "cwe": [
+                    "CWE-79"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-58064"
+                    ],
+                    "githubID": "GHSA-x9gp-vjh6-3wv6",
+                    "summary": "### Impact\nA Cross-Site Scripting (XSS) vulnerability has been discovered in the CKEditor 5 clipboard package. This vulnerability could be triggered by a specific user action, leading to unauthorized JavaScript code execution, if the attacker managed to insert a malicious content into the editor, which might happen with a very specific editor configuration.\n\nThis vulnerability affects **only** installations where the editor configuration meets one of the following criteria:\n- [HTML embed plugin](https://ckeditor.com/docs/ckeditor5/latest/features/html/html-embed.html) is enabled\n- Custom plugin introducing editable element which implements view [`RawElement`](https://ckeditor.com/docs/ckeditor5/latest/api/module_engine_view_rawelement-ViewRawElement.html) is enabled\n\n### Patches\nThe problem has been recognized and patched. The fix will be available in version 46.0.3 (and above), and explicitly in version 45.2.2.\n\n### For more information\nEmail us at [security@cksource.com](mailto:security@cksource.com) if you have any questions or comments about this advisory."
+                },
+                "info": [
+                    "https://github.com/ckeditor/ckeditor5/commit/b210e90c6cf84e662ef6c7daf93a92355a961bf2",
+                    "https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-x9gp-vjh6-3wv6"
+                ],
+                "severity": "low"
             }
         ]
     },
@@ -5869,6 +5949,7 @@ definitions = {
                 "severity": "medium"
             },
             {
+                "atOrAbove": "0.9.9",
                 "below": "9.3.2",
                 "cwe": [
                     "CWE-23"
@@ -6037,7 +6118,8 @@ definitions = {
                 "atOrAbove": "11.1.4",
                 "below": "12.3.5",
                 "cwe": [
-                    "CWE-285"
+                    "CWE-285",
+                    "CWE-863"
                 ],
                 "identifiers": {
                     "CVE": [
@@ -6195,7 +6277,8 @@ definitions = {
                 "atOrAbove": "13.0.0",
                 "below": "13.5.9",
                 "cwe": [
-                    "CWE-285"
+                    "CWE-285",
+                    "CWE-863"
                 ],
                 "identifiers": {
                     "CVE": [
@@ -6315,7 +6398,8 @@ definitions = {
                 "atOrAbove": "9.5.5",
                 "below": "14.2.15",
                 "cwe": [
-                    "CWE-285"
+                    "CWE-285",
+                    "CWE-863"
                 ],
                 "identifiers": {
                     "CVE": [
@@ -6356,7 +6440,7 @@ definitions = {
                 "severity": "medium"
             },
             {
-                "atOrAbove": "0",
+                "atOrAbove": "0.9.9",
                 "below": "14.2.24",
                 "cwe": [
                     "CWE-362"
@@ -6381,7 +6465,8 @@ definitions = {
                 "atOrAbove": "14.0.0",
                 "below": "14.2.25",
                 "cwe": [
-                    "CWE-285"
+                    "CWE-285",
+                    "CWE-863"
                 ],
                 "identifiers": {
                     "CVE": [
@@ -6451,6 +6536,68 @@ definitions = {
                 "severity": "low"
             },
             {
+                "atOrAbove": "0.9.9",
+                "below": "14.2.31",
+                "cwe": [
+                    "CWE-524"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-57752"
+                    ],
+                    "githubID": "GHSA-g5qg-72qw-gw5v",
+                    "summary": "A vulnerability in Next.js Image Optimization has been fixed in v15.4.5 and v14.2.31. When images returned from API routes vary based on request headers (such as `Cookie` or `Authorization`), these responses could be incorrectly cached and served to unauthorized users due to a cache key confusion bug.\n\nAll users are encouraged to upgrade if they use API routes to serve images that depend on request headers and have image optimization enabled.\n\nMore details at [Vercel Changelog](https://vercel.com/changelog/cve-2025-57752)"
+                },
+                "info": [
+                    "https://github.com/vercel/next.js/commit/6b12c60c61ee80cb0443ccd20de82ca9b4422ddd",
+                    "https://github.com/vercel/next.js/pull/82114",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-g5qg-72qw-gw5v",
+                    "https://vercel.com/changelog/cve-2025-57752"
+                ],
+                "severity": "medium"
+            },
+            {
+                "atOrAbove": "0.9.9",
+                "below": "14.2.31",
+                "cwe": [
+                    "CWE-20"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-55173"
+                    ],
+                    "githubID": "GHSA-xv57-4mr9-wg8v",
+                    "summary": "A vulnerability in **Next.js Image Optimization** has been fixed in **v15.4.5** and **v14.2.31**. The issue allowed attacker-controlled external image sources to trigger file downloads with arbitrary content and filenames under specific configurations. This behavior could be abused for phishing or malicious file delivery.\n\nAll users relying on `images.domains` or `images.remotePatterns` are encouraged to upgrade and verify that external image sources are strictly validated.\n\nMore details at [Vercel Changelog](https://vercel.com/changelog/cve-2025-55173)"
+                },
+                "info": [
+                    "http://vercel.com/changelog/cve-2025-55173",
+                    "https://github.com/vercel/next.js/commit/6b12c60c61ee80cb0443ccd20de82ca9b4422ddd",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-xv57-4mr9-wg8v",
+                    "https://vercel.com/changelog/cve-2025-55173"
+                ],
+                "severity": "medium"
+            },
+            {
+                "atOrAbove": "0.9.9",
+                "below": "14.2.32",
+                "cwe": [
+                    "CWE-918"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2025-57822"
+                    ],
+                    "githubID": "GHSA-4342-x723-ch2f",
+                    "summary": "A vulnerability in **Next.js Middleware** has been fixed in **v14.2.32** and **v15.4.7**. The issue occurred when request headers were directly passed into `NextResponse.next()`. In self-hosted applications, this could allow Server-Side Request Forgery (SSRF) if certain sensitive headers from the incoming request were reflected back into the response.\n\nAll users implementing custom middleware logic in self-hosted environments are strongly encouraged to upgrade and verify correct usage of the `next()` function.\n\nMore details at [Vercel Changelog](https://vercel.com/changelog/cve-2025-57822)"
+                },
+                "info": [
+                    "https://github.com/vercel/next.js/commit/9c9aaed5bb9338ef31b0517ccf0ab4414f2093d8",
+                    "https://github.com/vercel/next.js/security/advisories/GHSA-4342-x723-ch2f",
+                    "https://vercel.com/changelog/cve-2025-57822"
+                ],
+                "severity": "medium"
+            },
+            {
                 "atOrAbove": "15.0.0",
                 "below": "15.1.2",
                 "cwe": [
@@ -6470,28 +6617,6 @@ definitions = {
                     "https://nvd.nist.gov/vuln/detail/CVE-2024-56332"
                 ],
                 "severity": "medium"
-            },
-            {
-                "atOrAbove": "15.0.0",
-                "below": "15.1.6",
-                "cwe": [
-                    "CWE-362"
-                ],
-                "identifiers": {
-                    "CVE": [
-                        "CVE-2025-32421"
-                    ],
-                    "githubID": "GHSA-qpjv-v59x-3qc4",
-                    "summary": "Next.js Race Condition to Cache Poisoning"
-                },
-                "info": [
-                    "https://github.com/advisories/GHSA-qpjv-v59x-3qc4",
-                    "https://github.com/vercel/next.js",
-                    "https://github.com/vercel/next.js/security/advisories/GHSA-qpjv-v59x-3qc4",
-                    "https://nvd.nist.gov/vuln/detail/CVE-2025-32421",
-                    "https://vercel.com/changelog/cve-2025-32421"
-                ],
-                "severity": "low"
             },
             {
                 "atOrAbove": "15.0.4-canary.51",
@@ -6541,7 +6666,8 @@ definitions = {
                 "atOrAbove": "15.0.0",
                 "below": "15.2.3",
                 "cwe": [
-                    "CWE-285"
+                    "CWE-285",
+                    "CWE-863"
                 ],
                 "identifiers": {
                     "CVE": [
@@ -7625,21 +7751,6 @@ definitions = {
                 "severity": "high"
             },
             {
-                "below": "4.9.7",
-                "cwe": [
-                    "CWE-79"
-                ],
-                "identifiers": {
-                    "githubID": "GHSA-p7j5-4mwm-hv86",
-                    "summary": "TinyMCE before 4.9.7 and 5.x before 5.1.4 allows XSS in the core parser, the paste plugin, and the visualchars plugin by using the clipboard or APIs to insert content into the editor."
-                },
-                "info": [
-                    "https://github.com/advisories/GHSA-p7j5-4mwm-hv86",
-                    "https://github.com/tinymce/tinymce/security/advisories/GHSA-p7j5-4mwm-hv86"
-                ],
-                "severity": "high"
-            },
-            {
                 "below": "4.9.10",
                 "cwe": [
                     "CWE-79"
@@ -7691,22 +7802,6 @@ definitions = {
                 "info": [
                     "https://github.com/advisories/GHSA-27gm-ghr9-4v95",
                     "https://github.com/tinymce/tinymce/security/advisories/GHSA-27gm-ghr9-4v95"
-                ],
-                "severity": "high"
-            },
-            {
-                "atOrAbove": "5.0.0",
-                "below": "5.1.4",
-                "cwe": [
-                    "CWE-79"
-                ],
-                "identifiers": {
-                    "githubID": "GHSA-p7j5-4mwm-hv86",
-                    "summary": "TinyMCE before 4.9.7 and 5.x before 5.1.4 allows XSS in the core parser, the paste plugin, and the visualchars plugin by using the clipboard or APIs to insert content into the editor."
-                },
-                "info": [
-                    "https://github.com/advisories/GHSA-p7j5-4mwm-hv86",
-                    "https://github.com/tinymce/tinymce/security/advisories/GHSA-p7j5-4mwm-hv86"
                 ],
                 "severity": "high"
             },
