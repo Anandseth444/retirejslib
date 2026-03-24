@@ -5302,8 +5302,7 @@ definitions = {
                 "/\\*[\\s*!]+(?:@license)?[\\s*]+(?:Lo-Dash|lodash|Lodash) v?([0-9][0-9.a-z_-]+) lodash.com/license",
                 "/\\*[\\s*!]+(?:@license)?[\\s*]+(?:Lo-Dash|lodash|Lodash) v?([0-9][0-9.a-z_-]+)[\\s\\S]{1,200}Build: `lodash modern -o",
                 "/\\*[\\s*]+@license[\\s*]+(?:Lo-Dash|lodhash|Lodash)[\\s\\S]{1,500}var VERSION *= *['\"]([0-9][0-9.a-z_-]+)['\"]",
-                "=\"([0-9][0-9.a-z_-]+)(?<=[0-9]{1,2}\\.[0-9]{1,2}\\.[0-9]{1,2})\"[\\s\\S]{1,300}__lodash_hash_undefined__",
-                "var VERSION=\"([0-9][0-9.a-z_-]+)\";var BIND_FLAG=1,BIND_KEY_FLAG=2,CURRY_BOUND_FLAG=4,CURRY_FLAG=8"
+"var VERSION=\"([0-9][0-9.a-z_-]+)\";var BIND_FLAG=1,BIND_KEY_FLAG=2,CURRY_BOUND_FLAG=4,CURRY_FLAG=8"
             ],
             "uri": [
                 "/([0-9][0-9.a-z_-]+)/lodash(\\.min)?\\.js"
