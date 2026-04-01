@@ -1524,6 +1524,44 @@ definitions = {
                     "https://github.com/axios/axios/security/advisories/GHSA-4hjh-wcwx-xvwj"
                 ],
                 "severity": "high"
+            },
+            {
+                "atOrAbove": "0.30.4",
+                "below": "0.30.5",
+                "cwe": [
+                    "CWE-506"
+                ],
+                "identifiers": {
+                    "githubID": "GHSA-fw8c-xr5c-95f9",
+                    "bug": "MAL-2026-2306",
+                    "summary": "axios 0.30.4 is a malicious supply chain release. The axios npm account was compromised on 2026-03-31; the attacker injected a dependency on plain-crypto-js@4.2.1 which contains a postinstall RAT dropper that contacts a remote C2 server and executes a platform-specific second-stage payload (macOS/Windows/Linux). Downgrade to 0.30.3."
+                },
+                "info": [
+                    "https://github.com/axios/axios/issues/10604",
+                    "https://github.com/advisories/GHSA-fw8c-xr5c-95f9",
+                    "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+                    "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all"
+                ],
+                "severity": "critical"
+            },
+            {
+                "atOrAbove": "1.14.1",
+                "below": "1.14.2",
+                "cwe": [
+                    "CWE-506"
+                ],
+                "identifiers": {
+                    "githubID": "GHSA-fw8c-xr5c-95f9",
+                    "bug": "MAL-2026-2306",
+                    "summary": "axios 1.14.1 is a malicious supply chain release. The axios npm account was compromised on 2026-03-31; the attacker injected a dependency on plain-crypto-js@4.2.1 which contains a postinstall RAT dropper that contacts a remote C2 server and executes a platform-specific second-stage payload (macOS/Windows/Linux). Downgrade to 1.14.0."
+                },
+                "info": [
+                    "https://github.com/axios/axios/issues/10604",
+                    "https://github.com/advisories/GHSA-fw8c-xr5c-95f9",
+                    "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
+                    "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all"
+                ],
+                "severity": "critical"
             }
         ]
     },
