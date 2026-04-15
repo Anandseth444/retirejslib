@@ -1575,7 +1575,7 @@ definitions = {
                         "CVE-2026-40175"
                     ],
                     "githubID": "GHSA-fvcv-3m26-pcqx",
-                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (CVE-2026-40175)"
+                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (affected: <0.31.0)"
                 },
                 "info": [
                     "https://github.com/axios/axios/security/advisories/GHSA-fvcv-3m26-pcqx",
@@ -1599,7 +1599,7 @@ definitions = {
                         "CVE-2026-40175"
                     ],
                     "githubID": "GHSA-fvcv-3m26-pcqx",
-                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (CVE-2026-40175)"
+                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (affected: 1.0.0 - <1.15.0)"
                 },
                 "info": [
                     "https://github.com/axios/axios/security/advisories/GHSA-fvcv-3m26-pcqx",
