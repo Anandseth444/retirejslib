@@ -1562,6 +1562,53 @@ definitions = {
                     "https://www.elastic.co/security-labs/axios-one-rat-to-rule-them-all"
                 ],
                 "severity": "critical"
+            },
+            {
+                "below": "0.31.0",
+                "cwe": [
+                    "CWE-113",
+                    "CWE-444",
+                    "CWE-918"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2026-40175"
+                    ],
+                    "githubID": "GHSA-fvcv-3m26-pcqx",
+                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (CVE-2026-40175)"
+                },
+                "info": [
+                    "https://github.com/axios/axios/security/advisories/GHSA-fvcv-3m26-pcqx",
+                    "https://nvd.nist.gov/vuln/detail/CVE-2026-40175",
+                    "https://github.com/axios/axios/pull/10660",
+                    "https://github.com/axios/axios/pull/10688",
+                    "https://github.com/axios/axios/releases/tag/v0.31.0"
+                ],
+                "severity": "high"
+            },
+            {
+                "atOrAbove": "1.0.0",
+                "below": "1.15.0",
+                "cwe": [
+                    "CWE-113",
+                    "CWE-444",
+                    "CWE-918"
+                ],
+                "identifiers": {
+                    "CVE": [
+                        "CVE-2026-40175"
+                    ],
+                    "githubID": "GHSA-fvcv-3m26-pcqx",
+                    "summary": "Axios HTTP header injection gadget enabling prototype-pollution-to-RCE escalation (CVE-2026-40175)"
+                },
+                "info": [
+                    "https://github.com/axios/axios/security/advisories/GHSA-fvcv-3m26-pcqx",
+                    "https://nvd.nist.gov/vuln/detail/CVE-2026-40175",
+                    "https://github.com/axios/axios/pull/10660",
+                    "https://github.com/axios/axios/pull/10688",
+                    "https://github.com/axios/axios/releases/tag/v1.15.0"
+                ],
+                "severity": "high"
             }
         ]
     },
