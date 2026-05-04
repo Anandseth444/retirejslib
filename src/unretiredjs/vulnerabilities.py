@@ -1709,7 +1709,7 @@ definitions = {
             "hashes": {},
             "uri": [
                 "/([0-9][0-9.a-z_-]+)/bootstrap(\\.min)?\\.js",
-                "/([0-9][0-9.a-z_-]+)/js/bootstrap(\\.min)?\\.js"
+                "/([0-9]+\.[0-9.a-z_-]+)/js/bootstrap(\.min)?\.js"
             ]
         },
         "vulnerabilities": [
